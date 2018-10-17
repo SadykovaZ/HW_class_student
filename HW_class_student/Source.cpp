@@ -48,13 +48,15 @@ public:
 	}
 	void addGrade()
 	{
-		int *newGrades = new int[size + 1];
+		
+		int *newGrades = new int[size + 6];
 		for (int i = 0; i < size; i++)
 		{
 			newGrades[i] = grades[i];
 		}
+		
 		cout << "Enter new grade: ";
-		cin >> newGrades[size];
+		cin>>newGrades[size];
 		delete[] grades;
 		size++;
 		grades = newGrades;
@@ -81,7 +83,10 @@ void main()
 {
 	student s("Peter", 0, 15);
 	s.info();
-	s.addGrade();
-	s.info();
+	while (true)
+	{
+		s.addGrade();
+		s.info();
+	}
 	system("pause");
 }
